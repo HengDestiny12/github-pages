@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Video Ad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Social Sharing Meta Tags -->
+  <meta property="og:title" content="Clickable Video Ad">
+  <meta property="og:description" content="Watch this short ad video with a special offer!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moonlit-unicorn-ec41d0.netlify.app/">
+  <meta property="og:image" content="https://moonlit-unicorn-ec41d0.netlify.app/preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clickable Video Ad">
+  <meta name="twitter:description" content="Watch this short ad video with a special offer!">
+  <meta name="twitter:image" content="https://moonlit-unicorn-ec41d0.netlify.app/preview.jpg">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    #video-section {
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      position: relative;
+    }
+
+    video {
+      max-height: 100%;
+      width: auto;
+      cursor: pointer;
+    }
+
+    #ad-section {
+      height: 20vh; /* Make ad section smaller */
+      background: #222;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .controls button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background: #1DA1F2;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .speed-controls {
+      margin-left: 10px;
+      display: flex;
+    }
+
+    .speed-controls button {
+      margin-left: 5px;
+      background: #4CAF50;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="video-section">
+    <video id="adVideo" muted loop playsinline>
+      <source src="video6325764761401164633.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div id="ad-section">
+    <p>Ad Content Here...</p>
+  </div>
+
+  <div class="controls">
+    <button onclick="playVideo()">Play</button>
+    <button onclick="pauseVideo()">Stop</button>
+
+    <div class="speed-controls">
+      <button onclick="changeSpeed(2)">×2</button>
+      <button onclick="changeSpeed(5)">×5</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('adVideo');
+    const adSection = document.getElementById('ad-section');
+
+    // Play video when clicked on
+    video.addEventListener('click', () => {
+      video.play();
+      // Show ad section at the bottom
+      adSection.style.display = 'flex';
+      // Redirect to the ad link after video starts
+      window.open("https://www.effectiveratecpm.com/wex3sa7pi?key=d74e1b6c874a8d4ebbb55a66110960f2", "_blank");
+    });
+
+    // Play video function
+    function playVideo() {
+      video.play();
+    }
+
+    // Pause video function
+    function pauseVideo() {
+      video.pause();
+    }
+
+    // Change playback speed function
+    function changeSpeed(speed) {
+      video.playbackRate = speed;
+    }
+  </script>
+
+</body>
+</html>
